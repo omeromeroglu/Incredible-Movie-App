@@ -15,7 +15,7 @@ const initialState = {
 
 export const useHomeFetch = () => {
 
-    const [searchTerm, setSearchTerm] = useState("");
+    let [searchTerm, setSearchTerm] = useState("");
     const [state,setState]= useState(initialState)
     const [loading,setLoading]= useState(false)
     const [error, setError] = useState(false)
@@ -40,6 +40,8 @@ export const useHomeFetch = () => {
         }
         setLoading(false)
     }
+
+    
     //Initial render and search
     useEffect(() => {
         setState(initialState)
@@ -54,6 +56,8 @@ export const useHomeFetch = () => {
         setIsLoadingMore(false)
     
     },[isLoadingMore, searchTerm, state.page])
+
+    
 
     return {state , loading , error, setSearchTerm, searchTerm,setIsLoadingMore}
 

@@ -16,9 +16,10 @@ import NoImage from "../images/no_image.jpg";
 const Movie = () => {
     const {movieId} = useParams()
 
-    const{state:movie, loading, error} = useMovieFetch(movieId);
-    console.log(movie)
-
+    const{state:movie, loading, error,videoState} = useMovieFetch(movieId);
+    //console log first item's key of videoState
+     console.log(videoState.results)
+    
     if(loading) return <Spinner/>
     if(error) return <div>Something went wrong...</div>
 
@@ -26,7 +27,7 @@ const Movie = () => {
     return(
         <>
             <BreadCrumb movieTitle ={movie.original_title} />
-            <MovieInfo movie={movie}/>
+            <MovieInfo movie={movie} />
         </>
 
     )

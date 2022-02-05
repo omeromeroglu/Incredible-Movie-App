@@ -11,6 +11,9 @@ import NotFound from "./components/NotFound"
 //Styles
 import { GlobalStyle } from "./GlobalStyle"
 
+//Hook
+import { useHomeFetch } from "./hooks/useHomeFetch"
+
 const App = () => {
   return (
     <Router>

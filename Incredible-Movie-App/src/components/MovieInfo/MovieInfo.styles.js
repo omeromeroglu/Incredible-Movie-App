@@ -76,5 +76,22 @@ export const Text = styled.div`
             }
         }
 
+    
 
 `
+export const Video = styled.iframe`
+        
+        display: block;
+        border: 2px solid var(--white);
+        overflow: hidden;
+        margin: 40px auto;
+        width: 762px;
+        height: 400px;
+
+    
+        
+        
+        
+`
+
+

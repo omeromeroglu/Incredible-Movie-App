@@ -5,7 +5,8 @@ import {
   API_KEY,
   REQUEST_TOKEN_URL,
   LOGIN_URL,
-  SESSION_ID_URL
+  SESSION_ID_URL,
+  VIDEO_BASE_URL
 } from './config';
 
 const defaultConfig = {
@@ -29,6 +30,10 @@ const apiSettings = {
   fetchCredits: async movieId => {
     const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
+  },
+  fetchVideo: async movieId => {
+    const videoEndpoint = `${VIDEO_BASE_URL}${movieId}/videos?api_key=${API_KEY}&language=en-US`;
+    return await (await fetch(videoEndpoint)).json();
   },
   // Bonus material below for login
   getRequestToken: async () => {

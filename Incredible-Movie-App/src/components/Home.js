@@ -1,4 +1,5 @@
 import React from "react"
+import { useSearchParams } from "react-router-dom"
 
 //Config
 
@@ -19,7 +20,13 @@ import { useHomeFetch } from "../hooks/useHomeFetch"
 import NoImage from "../images/no_image.jpg"
 
 const Home = () => {
-  const { state, loading, error, searchTerm, setSearchTerm ,setIsLoadingMore} = useHomeFetch()
+  //use useSearchParams to get the search term from the url
+  /* const searchParams = useSearchParams()
+  const { searchTerm } = searchParams */
+
+  
+  const { state, loading, error, searchTerm,setSearchTerm,setIsLoadingMore} = useHomeFetch()
+  
 
   console.log(state)
 
