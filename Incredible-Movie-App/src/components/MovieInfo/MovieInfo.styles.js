@@ -85,7 +85,7 @@ export const Video = styled.iframe`
         border: 2px solid var(--white);
         overflow: hidden;
         margin: 40px auto;
-        width: 762px;
+        width: 100%;
         height: 400px;
 
     

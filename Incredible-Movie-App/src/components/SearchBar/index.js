@@ -14,7 +14,7 @@ const SearchBar = ({setSearchTerm}) => {
 
     useEffect(() => {
 
-        if(initial.current){
+        if(initial.current ){
             initial.current = false
             return
         }
@@ -32,7 +32,7 @@ const SearchBar = ({setSearchTerm}) => {
             <Content>
                 <img src={searchIcon} alt="search-icon" />
                 <input type="text" placeholder="Search Movie" 
-                onChange = {(e) => {setState(e.target.value)}}
+                onChange = {(e) => {setState(e.target.value.trimStart())}}
                 value={state}
                 />
             </Content>
